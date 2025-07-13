@@ -63,20 +63,13 @@ Before you begin, ensure you have the following installed on your system:
 
 ### Local Development
 
-1. Start the database and Redis services:
-
-   ```bash
-   # From project root
-   docker-compose up -d
-   ```
-
-2. Navigate to the web app directory:
+1. Navigate to the web app directory:
 
    ```bash
    cd apps/web
    ```
 
-3. Copy `.env.example` to `.env.local`:
+2. Copy `.env.example` to `.env.local`:
 
    ```bash
    # Unix/Linux/Mac
@@ -89,7 +82,7 @@ Before you begin, ensure you have the following installed on your system:
    Copy-Item .env.example .env.local
    ```
 
-4. Configure required environment variables in `.env.local`:
+3. Configure required environment variables in `.env.local`:
 
    **Required Variables:**
 
@@ -131,8 +124,15 @@ Before you begin, ensure you have the following installed on your system:
    GOOGLE_CLIENT_ID="your-google-client-id"
    GOOGLE_CLIENT_SECRET="your-google-client-secret"
    ```
+   
+4. Start the database and Redis services:
 
-5. Run database migrations: `bun run db:migrate` from (inside apps/web)
+   ```bash
+   # From project root
+   docker-compose up -d
+   ```
+
+5. Run database migrations: `bun install && bun run db:migrate` from (inside apps/web)
 6. Start the development server: `bun run dev` from (inside apps/web)
 
 The application will be available at [http://localhost:3000](http://localhost:3000).
